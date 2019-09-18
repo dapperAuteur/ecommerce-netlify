@@ -21,7 +21,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style lang="scss" scoped>
@@ -41,14 +41,14 @@ export default {};
     grid-area: 2 / 2 / 3 / 4;
     font-size: 6.5vmin;
     color: #d96528;
-    font-family: "PT Serif", -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'PT Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, 'Helvetica Neue', Arial, sans-serif;
   }
   .collection {
     grid-area: 3 / 3 / 4 / 4;
     font-size: 8.5vmin;
-    font-family: "PT Serif", -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'PT Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, 'Helvetica Neue', Arial, sans-serif;
   }
   .details {
     grid-area: 4 / 2 / 5 / 4;

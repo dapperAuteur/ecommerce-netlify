@@ -15,10 +15,20 @@
         ></star-rating>
         <h4 class="price">{{ product.price | dollar }}</h4>
         <p>{{ product.description }}</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto velit dolores repudiandae animi quidem, eveniet quod dolor facilis dicta eligendi ullam error. Assumenda in fugiat natus enim similique nam itaque.</p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto velit
+          dolores repudiandae animi quidem, eveniet quod dolor facilis dicta
+          eligendi ullam error. Assumenda in fugiat natus enim similique nam
+          itaque.
+        </p>
         <p class="quantity">
-          <button class="update-num" @click="quantity > 0 ? quantity-- : quantity = 0">-</button>
-          <input type="number" v-model="quantity" />
+          <button
+            class="update-num"
+            @click="quantity > 0 ? quantity-- : (quantity = 0)"
+          >
+            -
+          </button>
+          <input v-model="quantity" type="number" />
           <button class="update-num" @click="quantity++">+</button>
         </p>
         <p>
@@ -44,16 +54,21 @@
         style="margin: 5px 0"
       ></star-rating>
       <p>{{ product.review }}</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto placeat consequatur voluptas sit mollitia ratione autem, atque sequi odio laborum, recusandae quia distinctio voluptatibus sint, quae aliquid possimus exercitationem.</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum iusto
+        placeat consequatur voluptas sit mollitia ratione autem, atque sequi
+        odio laborum, recusandae quia distinctio voluptatibus sint, quae aliquid
+        possimus exercitationem.
+      </p>
     </div>
     <app-featured-products />
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
-import StarRating from "vue-star-rating/src/star-rating.vue";
-import AppFeaturedProducts from "~/components/AppFeaturedProducts.vue";
+import { mapState } from 'vuex'
+import StarRating from 'vue-star-rating/src/star-rating.vue'
+import AppFeaturedProducts from '~/components/AppFeaturedProducts.vue'
 
 export default {
   components: {
@@ -65,23 +80,23 @@ export default {
       id: this.$route.params.id,
       quantity: 1,
       tempcart: [] // this object should be the same as the json store object, with an additional param, quantity
-    };
+    }
   },
   computed: {
-    ...mapState(["storedata"]),
+    ...mapState(['storedata']),
     product() {
-      return this.storedata.find(el => el.id === this.id);
+      return this.storedata.find((el) => el.id === this.id)
     }
   },
   methods: {
     cartAdd() {
-      let item = this.product;
-      item.quantity = this.quantity;
-      this.tempcart.push(item);
-      this.$store.commit("addToCart", {...item});
+      const item = this.product
+      item.quantity = this.quantity
+      this.tempcart.push(item)
+      this.$store.commit('addToCart', { ...item })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

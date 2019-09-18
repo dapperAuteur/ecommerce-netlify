@@ -4,7 +4,7 @@
       <span>Featured Products</span>
     </h2>
     <div class="featureditems">
-      <div class="item" v-for="product in featuredProducts" :key="product.id">
+      <div v-for="product in featuredProducts" :key="product.id" class="item">
         <img :src="`/products/${product.img}`" />
         <h3>{{ product.name }}</h3>
         <h4>{{ product.price | dollar }}</h4>
@@ -20,10 +20,10 @@
 export default {
   computed: {
     featuredProducts() {
-      return this.$store.getters.featuredProducts;
+      return this.$store.getters.featuredProducts
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -62,7 +62,7 @@ h2 span {
 }
 h2 span:after,
 h2 span:before {
-  content: " ";
+  content: ' ';
   display: block;
   height: 1px;
   width: 1000px;

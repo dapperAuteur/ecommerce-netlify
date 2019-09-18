@@ -1,7 +1,9 @@
 <template>
   <section>
     <div class="shopping">
-      <h2 :class="{ active: cartUIStatus === 'idle' && cartCount === 0 }">01</h2>
+      <h2 :class="{ active: cartUIStatus === 'idle' && cartCount === 0 }">
+        01
+      </h2>
       <h4>Shopping Cart</h4>
     </div>
     <div class="checkout">
@@ -16,15 +18,14 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import { mapGetters } from "vuex";
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   computed: {
-    ...mapState(["cartUIStatus"]),
-    ...mapGetters(["cartCount"])
+    ...mapState(['cartUIStatus']),
+    ...mapGetters(['cartCount'])
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

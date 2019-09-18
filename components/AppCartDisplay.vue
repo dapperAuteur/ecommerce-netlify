@@ -10,7 +10,11 @@
         </tr>
         <tr v-for="item in cart" :key="item.id">
           <td>
-            <img :src="`/products/${item.img}`" :alt="item.name" class="productimg" />
+            <img
+              :src="`/products/${item.img}`"
+              :alt="item.name"
+              class="productimg"
+            />
             <h3 class="productname">{{ item.name }}</h3>
           </td>
           <td>
@@ -19,7 +23,7 @@
           <td>
             <strong>{{ item.quantity }}</strong>
           </td>
-          <td>{{ item.quantity * item.price | dollar }}</td>
+          <td>{{ (item.quantity * item.price) | dollar }}</td>
         </tr>
       </table>
 
@@ -54,19 +58,19 @@
 </template>
 
 <script>
-import AppCard from "~/components/AppCard.vue";
-import { mapState } from "vuex";
-import { mapGetters } from "vuex";
+import { mapState, mapGetters } from 'vuex'
+
+import AppCard from '~/components/AppCard.vue'
 
 export default {
   components: {
     AppCard
   },
   computed: {
-    ...mapState(["cart"]),
-    ...mapGetters(["cartCount", "cartTotal"])
+    ...mapState(['cart']),
+    ...mapGetters(['cartCount', 'cartTotal'])
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

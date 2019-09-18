@@ -51,36 +51,35 @@
 </template>
 
 <script>
-import { TimelineMax, Elastic } from "gsap";
+import { TimelineMax, Elastic } from 'gsap'
 
 export default {
+  mounted() {
+    this.loadAnim()
+  },
   methods: {
     loadAnim() {
       TweenMax.staggerFromTo(
-        "path",
+        'path',
         1.25,
         {
           opacity: 0,
           scale: 0,
-          transformOrigin: "50% 50%"
+          transformOrigin: '50% 50%'
         },
         {
           opacity: 1,
           scale: 1,
           repeat: -1,
           repeatDelay: 0.5,
-          transformOrigin: "50% 50%",
+          transformOrigin: '50% 50%',
           ease: Elastic.easeOut.config(1, 0.4)
         },
         0.02
-      );
+      )
     }
-  },
-  mounted() {
-    this.loadAnim();
   }
-};
+}
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

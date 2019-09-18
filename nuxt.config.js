@@ -1,7 +1,7 @@
 import data from './static/storedata.json'
-let dynamicRoutes = () => {
-  return new Promise(resolve => {
-    resolve(data.map(el => `product/${el.id}`))
+const dynamicRoutes = () => {
+  return new Promise((resolve) => {
+    resolve(data.map((el) => `product/${el.id}`))
   })
 }
 

@@ -16,7 +16,7 @@
           <nuxt-link to="/men">Men</nuxt-link>
         </li>
         <li>
-          <div class="carttotal" v-if="cartCount > 0">{{ cartCount }}</div>
+          <div v-if="cartCount > 0" class="carttotal">{{ cartCount }}</div>
           <nuxt-link to="/cart">Cart</nuxt-link>
         </li>
       </ul>
@@ -25,13 +25,13 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex'
 
 export default {
   computed: {
-    ...mapGetters(["cartCount"])
+    ...mapGetters(['cartCount'])
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
