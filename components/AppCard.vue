@@ -22,7 +22,7 @@
         id="card"
         class="stripe-card"
         :class="{ complete }"
-        stripe="pk_test_5ThYi0UvX3xwoNdgxxxTxxrG"
+        stripe="pk_test_9dtZy8nh0Q3DuXE8lN4dKOEN"
         :options="stripeOptions"
         @change="complete = $event.complete"
       />
